@@ -2,46 +2,49 @@
 
 using namespace std;
 
-int main(void) {
+void calculaSalario(double salario, double &novoSalario, double &valorAumento, double percentual) {
+    novoSalario = salario + (salario * percentual);
+    valorAumento = novoSalario - salario;
+}
+
+int main() {
   double salario, novoSalario, valorAumento;
 
   cout << "Digite o salario: ";
   cin >> salario;
 
   if (salario >= 1500) {
-    novoSalario = salario + (salario * 0.05);
-    valorAumento = novoSalario - salario;
+    double percentual = 0.05;
+    calculaSalario(salario, novoSalario, valorAumento, percentual);
 
-    cout << "Salario: " << salario << endl;
-    cout << "Novo Salario: " << novoSalario << endl;
-    cout << "Percentual de aumento: 5%" << endl;
+    cout << "Salario original: " << salario << endl;
+    cout << "Novo salario: " << novoSalario << endl;
     cout << "Valor do aumento: " << valorAumento << endl;
 
   } else if (salario >= 700) {
-    novoSalario = salario + (salario * 0.10);
-    valorAumento = novoSalario - salario;
-    
-    cout << "Salario: " << salario << endl;
-    cout << "Novo Salario: " << novoSalario << endl;
-    cout << "Percentual de aumento: 10%" << endl;
+    double percentual = 0.10;
+    calculaSalario(salario, novoSalario, valorAumento, percentual);
+
+    cout << "Salario original: " << salario << endl;
+    cout << "Novo salario: " << novoSalario << endl;
     cout << "Valor do aumento: " << valorAumento << endl;
 
   } else if (salario > 280) {
-    novoSalario = salario + (salario * 0.15);
-    valorAumento = novoSalario - salario;
-    
-    cout << "Salario: " << salario << endl;
-    cout << "Novo Salario: " << novoSalario << endl;
-    cout << "Percentual de aumento: 15%" << endl;
+    double percentual = 0.15;
+    calculaSalario(salario, novoSalario, valorAumento, percentual);
+
+    cout << "Salario original: " << salario << endl;
+    cout << "Novo salario: " << novoSalario << endl;
     cout << "Valor do aumento: " << valorAumento << endl;
 
   } else {
-    novoSalario = salario + (salario * 0.20);
-    valorAumento = novoSalario - salario;
-    
-    cout << "Salario: " << salario << endl;
-    cout << "Novo Salario: " << novoSalario << endl;
-    cout << "Percentual de aumento: 20%" << endl;
+    double percentual = 0.20;
+    calculaSalario(salario, novoSalario, valorAumento, percentual);
+
+    cout << "Salario original: " << salario << endl;
+    cout << "Novo salario: " << novoSalario << endl;
     cout << "Valor do aumento: " << valorAumento << endl;
   }
+
+  return 0;
 }
