@@ -4,8 +4,8 @@ using namespace std;
 
 //Prototipação de função
 
-int paraFahrenheit(float celsius);
-int paraKelvin(float celsius);
+float paraFahrenheit(float celsius);
+float paraKelvin(float celsius);
 
 int main() {
 
@@ -24,12 +24,12 @@ int main() {
   return 0;
 }
 
-int paraFahrenheit(float celsius) {
+float paraFahrenheit(float celsius) {
   float fahrenheit = (celsius * 1.8) + 32;
   return fahrenheit;
 }
 
-int paraKelvin(float celsius) {
+float paraKelvin(float celsius) {
   float kelvin = celsius + 273;
   return kelvin;
 }
